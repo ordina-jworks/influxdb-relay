@@ -119,7 +119,7 @@ func (h *HTTP) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			return
 	}
 
-	if r.URL.Path != "/write" {
+	if r.URL.Path != "/api/v1/prom/write" && r.URL.Path != "/write" {
 		jsonError(w, http.StatusNotFound, "invalid write endpoint")
 		return
 	}
